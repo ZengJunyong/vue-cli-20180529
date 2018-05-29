@@ -15,4 +15,51 @@
 
 body {
   font-family: Brandon_reg, Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.4px;
+}
+
+.step-bg {
+  background: #21222a;
+  color: #838498;
+}
+
+.top-bar {
+  padding: 14px;
+  font-size: 22px;
+  position: relative;
+}
+
+.top-bar span {
+  position: absolute;
+  left: 14px;
+  top: 12px;
+}
+
+.title {
+  padding: 5px 0 15px 0;
+  font-size: 18px;
+}
+
+.badge {
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: white;
+  margin-right: 15px;
+  margin-bottom: 12px;
+}
+
+.badge-yes {
+  background: #6a68bd;
+  border: solid 1px #6a68bd;
+}
+
+.badge-no {
+  border: solid 1px white;
+}
+
+.cta {
+  color: white;
+  text-align: center;
+  padding: 18px;
+  font-size: 18px;
 }
