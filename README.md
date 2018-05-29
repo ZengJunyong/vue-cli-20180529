@@ -1,6 +1,6 @@
 # vue-cli-20180529
 
-> A Vue.js project
+> A Vue.js project, used for making process UI for Paktor App
 
 ## Build Setup
 
