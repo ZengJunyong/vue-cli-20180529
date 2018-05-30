@@ -7,13 +7,13 @@
       indicators
       :interval="3000"
     >
-      <b-carousel-slide img-src="/static/Image_Coaching_1.jpg">
+      <b-carousel-slide img-src="static/Image_Coaching_1.jpg">
       </b-carousel-slide>
-      <b-carousel-slide img-src="/static/Image_Coaching_2.jpg">
+      <b-carousel-slide img-src="static/Image_Coaching_2.jpg">
       </b-carousel-slide>
-      <b-carousel-slide img-src="/static/Image_Coaching_3.jpg">
+      <b-carousel-slide img-src="static/Image_Coaching_3.jpg">
       </b-carousel-slide>
-      <b-carousel-slide img-src="/static/Image_Coaching_4.jpg">
+      <b-carousel-slide img-src="static/Image_Coaching_4.jpg">
       </b-carousel-slide>
     </b-carousel>
     <div class="p-3">
@@ -30,21 +30,21 @@
       indicators
       :interval="3000"
     >
-      <b-carousel-slide img-src="/static/Fleek_Image_1.jpg">
+      <b-carousel-slide img-src="static/Fleek_Image_1.jpg">
       </b-carousel-slide>
-      <b-carousel-slide img-src="/static/Fleek_Image_2.jpg">
+      <b-carousel-slide img-src="static/Fleek_Image_2.jpg">
       </b-carousel-slide>
-      <b-carousel-slide img-src="/static/Fleek_Image_3.jpg">
+      <b-carousel-slide img-src="static/Fleek_Image_3.jpg">
       </b-carousel-slide>
-      <b-carousel-slide img-src="/static/Fleek_Image_4.jpg">
+      <b-carousel-slide img-src="static/Fleek_Image_4.jpg">
       </b-carousel-slide>
-      <b-carousel-slide img-src="/static/Fleek_Image_5.jpg">
+      <b-carousel-slide img-src="static/Fleek_Image_5.jpg">
       </b-carousel-slide>
-      <b-carousel-slide img-src="/static/Fleek_Image_6.jpg">
+      <b-carousel-slide img-src="static/Fleek_Image_6.jpg">
       </b-carousel-slide>
-      <b-carousel-slide img-src="/static/Fleek_Image_7.jpg">
+      <b-carousel-slide img-src="static/Fleek_Image_7.jpg">
       </b-carousel-slide>
-      <b-carousel-slide img-src="/static/Fleek_Image_8.jpg">
+      <b-carousel-slide img-src="static/Fleek_Image_8.jpg">
       </b-carousel-slide>
     </b-carousel>
     <div class="p-3">

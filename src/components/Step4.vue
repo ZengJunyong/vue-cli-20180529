@@ -3,7 +3,7 @@
     <div class="text-center top-bar"><span @click="back()">﹤</span>Sign up with GaiGai</div>
     <div class="p-3" style="font-size: 14px;">
       GaiGai is an offline dating agency which is wholly owned by Paktor Group.
-      <img src="/static/Group.png" style="width: 70%;display: block;margin: 25px auto;">
+      <img src="static/Group.png" style="width: 70%;display: block;margin: 25px auto;">
       We need permission to obtain your personal details to contact you:
       <br><br>
       <span style="visibility: hidden">✎</span> Vivien Tan <br>
