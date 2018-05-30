@@ -76,7 +76,7 @@
     },
     methods: {
         register () {
-          this.$router.push({name: 'step2'})
+          this.$router.push({name: 'Step2'})
         },
         ignore(){
           this.$refs.hold.show()
