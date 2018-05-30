@@ -1,5 +1,5 @@
 <template>
-  <div class="step-bg">
+  <div>
     <div class="text-center top-bar"><span>﹤</span>GaiGai</div>
     <div class="text-center title">Image Consultancy</div>
     <b-carousel
@@ -62,8 +62,9 @@
     <div class="cta" @click="ignore()" style="background: #a1a2b3">
       I'm Not Interested
     </div>
-    <b-modal ref="hold" title="Hold that thought!" ok-title="I'm Interested" cancel-title="Not Interested">
-      <p class="my-4">You might miss out on a chance to meet that special someone sooner! Also, you won’t be able to see this message again.</p>
+    <b-modal ref="hold" title="Hold that thought!" ok-title="I'm Interested" cancel-title="Not Interested"
+      @ok="register()">
+      You might miss out on a chance to meet that special someone sooner! Also, you won’t be able to see this message again.
     </b-modal>
   </div>
 </template>
@@ -75,7 +76,7 @@
     },
     methods: {
         register () {
-          this.$router.push({name: 'pay'})
+          this.$router.push({name: 'step2'})
         },
         ignore(){
           this.$refs.hold.show()
