@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-center top-bar"><span>﹤</span>GaiGai</div>
+    <div class="text-center top-bar"><span class="carousel-control-prev-icon"></span>GaiGai</div>
     <img src="static/Fleek_Image_2.jpg" style="width: 100%;">
     <div class="p-3" style="font-size: 12px;">
       <p>

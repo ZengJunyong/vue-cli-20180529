@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-center top-bar"><span>﹤</span>GaiGai</div>
+    <div class="text-center top-bar"><span class="carousel-control-prev-icon"></span>GaiGai</div>
     <div class="text-center title">Image Consultancy</div>
     <b-carousel
       controls
