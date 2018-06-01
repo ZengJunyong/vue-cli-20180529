@@ -12,7 +12,9 @@
       <input type="text" v-model="user.phone">
 
       <div class="fixed-bottom">
-        <div class="p-3">By granting permission, you agree to our Terms of Use and Privacy Policy.</div>
+        <div class="p-3">By granting permission, you agree to our
+          <a target="_blank" href="http://www.gopaktor.com/#/term">Terms of Use</a> and
+          <a target="_blank" href="http://www.gopaktor.com/#/privacy">Privacy Policy</a>.</div>
         <div class="cta" @click="grant()" style="background: #706ec8;">
           Grant Permission
 
