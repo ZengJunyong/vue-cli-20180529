@@ -38,12 +38,17 @@ body {
   font-size: 18px;
 }
 
+input[type="checkbox"] {
+  display: none;
+}
+
 .badge {
   padding: 8px 12px;
   border-radius: 10px;
   color: white;
   margin-right: 15px;
   margin-bottom: 12px;
+  border: solid 1px white;
 }
 
 .badge-yes {
@@ -51,9 +56,6 @@ body {
   border: solid 1px #6a68bd;
 }
 
-.badge-no {
-  border: solid 1px white;
-}
 
 .cta {
   color: white;

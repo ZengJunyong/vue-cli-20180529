@@ -16,12 +16,10 @@
       </b-carousel-slide>
     </b-carousel>
     <div class="p-3">
-      <span class="badge badge-yes">Personal Shopping</span>
-      <span class="badge badge-no">Personal Grooming</span>
-      <span class="badge badge-no">Doll Up for Your Date</span>
-      <span class="badge badge-no">Personal Capsule</span>
-      <span class="badge badge-no">Wardrobe Audit</span>
-      <span class="badge badge-no">Silhouette & Colour Talk</span>
+      <template v-for="(o, index) in options">
+        <input type="checkbox" :id="index" :value="o" v-model="keywords">
+        <label :for="index" :class="{'badge-yes': keywords.indexOf(o)!=-1}" class="badge">{{o}}</label>
+      </template>
     </div>
     <div class="text-center title">Date Coaching</div>
     <b-carousel
@@ -61,24 +59,35 @@
       I'm Not Interested
     </div>
     <b-modal ref="hold" title="Hold that thought!" ok-title="I'm Interested" cancel-title="Not Interested"
-      @ok="register()">
-      You might miss out on a chance to meet that special someone sooner! Also, you won’t be able to see this message again.
+             @ok="register()">
+      You might miss out on a chance to meet that special someone sooner! Also, you won’t be able to see this message
+      again.
     </b-modal>
   </div>
 </template>
 
 <script>
   export default {
-    data () {
-      return {}
+    data() {
+      return {
+        keywords: [],
+        options: [
+          'Personal Shopping',
+          'Personal Grooming',
+          'Doll Up for Your Date',
+          'Personal Capsule',
+          'Wardrobe Audit',
+          'Silhouette & Colour Talk',
+        ]
+      }
     },
     methods: {
-        register () {
-          this.$router.push({name: 'Step2'})
-        },
-        ignore(){
-          this.$refs.hold.show()
-        }
+      register() {
+        this.$router.push({name: 'Step2'})
+      },
+      ignore() {
+        this.$refs.hold.show()
+      }
     }
   }
 </script>
