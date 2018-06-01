@@ -4,7 +4,6 @@
     <div class="text-center title">Image Consultancy</div>
     <b-carousel
       controls
-      indicators
       :interval="3000"
     >
       <b-carousel-slide img-src="static/Image_Coaching_1.jpg">
@@ -27,7 +26,6 @@
     <div class="text-center title">Date Coaching</div>
     <b-carousel
       controls
-      indicators
       :interval="3000"
     >
       <b-carousel-slide img-src="static/Fleek_Image_1.jpg">
