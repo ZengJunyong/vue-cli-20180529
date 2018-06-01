@@ -16,9 +16,9 @@
       </b-carousel-slide>
     </b-carousel>
     <div class="p-3">
-      <template v-for="(o, index) in options">
-        <input type="checkbox" :id="index" :value="o" v-model="keywords">
-        <label :for="index" :class="{'badge-yes': keywords.indexOf(o)!=-1}" class="badge">{{o}}</label>
+      <template v-for="(o, index) in options" v-if="index<6">
+        <input type="checkbox" :id="'a' +index" :value="o" v-model="keywords">
+        <label :for="'a' + index" :class="{'badge-yes': keywords.indexOf(o)!=-1}" class="badge">{{o}}</label>
       </template>
     </div>
     <div class="text-center title">Date Coaching</div>
@@ -44,13 +44,10 @@
       </b-carousel-slide>
     </b-carousel>
     <div class="p-3">
-      <span class="badge badge-yes">Body Language</span>
-      <span class="badge badge-no">Art of Socialising</span>
-      <span class="badge badge-no">Confidence Building</span>
-      <span class="badge badge-no">Art of Conversation</span>
-      <span class="badge badge-no">Art of Flirting & Texting</span>
-      <span class="badge badge-no">Date Analysis</span>
-      <span class="badge badge-no">Psyche of Yourself</span>
+      <template v-for="(o, index) in options" v-if="index>=6">
+        <input type="checkbox" :id="'a' +index" :value="o" v-model="keywords">
+        <label :for="'a' + index" :class="{'badge-yes': keywords.indexOf(o)!=-1}" class="badge">{{o}}</label>
+      </template>
     </div>
     <div class="cta" @click="register()" style="background: #706ec8;">
       Register Your Interest
@@ -78,6 +75,14 @@
           'Personal Capsule',
           'Wardrobe Audit',
           'Silhouette & Colour Talk',
+
+          'Body Language',
+          'Art of Socialising',
+          'Confidence Building',
+          'Art of Conversation',
+          'Art of Flirting & Texting',
+          'Date Analysis',
+          'Psyche of Yourself',
         ]
       }
     },
