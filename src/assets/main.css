@@ -64,3 +64,9 @@ input[type="checkbox"] {
   font-size: 18px;
 }
 
+footer button.btn-primary{
+  background: #6a68bd !important;
+  color: white !important;
+  border-color: #6a68bd !important;
+}
+

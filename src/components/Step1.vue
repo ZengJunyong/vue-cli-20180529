@@ -56,7 +56,7 @@
       I'm Not Interested
     </div>
     <b-modal ref="hold" title="Hold that thought!" ok-title="I'm Interested" cancel-title="Not Interested"
-             @ok="register()">
+             @ok="ok()" @cancel="cancel()">
       You might miss out on a chance to meet that special someone sooner! Also, you won’t be able to see this message
       again.
     </b-modal>
@@ -87,8 +87,11 @@
       }
     },
     methods: {
-      register() {
+      ok() {
         this.$router.push({name: 'Step2'})
+      },
+      cancel() {
+        document.location = 'http://overlay-close/'
       },
       ignore() {
         this.$refs.hold.show()

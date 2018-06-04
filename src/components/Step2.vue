@@ -10,21 +10,17 @@
       <input type="email" v-model="user.name"><br>
       <input type="email" v-model="user.email"><br>
       <input type="text" v-model="user.phone">
-
-      <div class="fixed-bottom">
-        <div class="p-3">By granting permission, you agree to our
-          <a target="_blank" href="http://www.gopaktor.com/#/term">Terms of Use</a> and
-          <a target="_blank" href="http://www.gopaktor.com/#/privacy">Privacy Policy</a>.</div>
-        <div class="cta" @click="grant()" style="background: #706ec8;">
-          Grant Permission
-
-        </div>
-        <b-modal ref="grant" title="We got your back!" ok-title="Alright, sure!" ok-only>
-          [Name], how about you continue swiping while waiting for our Relationship Manager to contact you?
-
-        </b-modal>
-      </div>
+      <br><br>
+      By granting permission, you agree to our
+      <a target="_blank" href="http://www.gopaktor.com/#/term">Terms of Use</a> and
+      <a target="_blank" href="http://www.gopaktor.com/#/privacy">Privacy Policy</a>.
     </div>
+    <div class="cta" @click="grant()" style="background: #706ec8;">
+      Grant Permission
+    </div>
+    <b-modal ref="grant" title="We got your back!" ok-title="Alright, sure!" @ok="ok" ok-only>
+      {{user.name}}, how about you continue swiping while waiting for our Relationship Manager to contact you?
+    </b-modal>
   </div>
 </template>
 
@@ -45,13 +41,16 @@
       },
       grant() {
         this.$refs.grant.show()
+      },
+      ok() {
+        document.location = 'http://overlay-close/'
       }
     }
   }
 </script>
 
 <style scoped>
-  input{
+  input {
     margin-bottom: 5px;
     padding: 0px 12px;
     width: 180px;
