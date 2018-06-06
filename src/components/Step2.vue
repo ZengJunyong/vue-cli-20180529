@@ -53,7 +53,7 @@
         document.location = 'http://overlay-close/'
       },
       keyInNumber() {
-        this.$router.push({name: 'key'})
+        this.$router.push({name: 'Phone'})
       },
     }
   }
