@@ -49,7 +49,7 @@
         <label :for="'a' + index" :class="{'badge-yes': keywords.indexOf(o)!=-1}" class="badge">{{o}}</label>
       </template>
     </div>
-    <div class="cta" @click="register()" style="background: #706ec8;">
+    <div class="cta" @click="ok()" style="background: #706ec8;">
       Register Your Interest
     </div>
     <div class="cta" @click="ignore()" style="background: #a1a2b3">
