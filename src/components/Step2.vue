@@ -7,10 +7,10 @@
       <img src="static/Group.png" style="width: 70%;display: block;margin: 25px auto;">
       We need permission to obtain your personal details to contact you:
       <br><br>
-      <input type="email" v-model="user.name"><br>
-      <input type="email" v-model="user.email"><br>
+      <input type="email" v-model.trim="user.name"><br>
+      <input type="email" v-model.trim="user.email"><br>
       <template v-if="user.phone">
-        <input type="text" v-model="user.phone"><br>
+        <input type="text" v-model.trim="user.phone"><br>
       </template>
       <br>
       <span v-if="!user.phone">To enable us to reach you faster, kindly provide us with your phone number. <br></span>
