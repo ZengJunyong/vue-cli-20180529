@@ -59,6 +59,10 @@
         console.log(pattern.test(this.phone))
 
         this.sending = 1
+        let phone = '+' + this.countryCode + this.phone
+        this.$http.post('http://localhost:4000/sendOTPFromPaktor', {phone: '+8615873157653'}).then((res) => {
+          console.log(res)
+        })
         setTimeout(() => {
           this.sending = 0
           this.code = '1234'
