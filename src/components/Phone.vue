@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-show="!code">
-      <div class="text-center top-bar"><span class="carousel-control-prev-icon"></span>Enter Phone Number</div>
+      <div class="text-center top-bar"><span @click="back()" class="carousel-control-prev-icon"></span>Enter Phone Number</div>
       <div class="p-3 text-center" style="font-size: 12px;">
         To enable us to reach you faster, <br>
         we need to verify your phone number: <br><br>
@@ -14,7 +14,7 @@
       </div>
     </div>
     <div v-show="code">
-      <div class="text-center top-bar"><span class="carousel-control-prev-icon"></span>Verify Phone Number</div>
+      <div class="text-center top-bar"><span @click="back()" class="carousel-control-prev-icon"></span>Verify Phone Number</div>
       <div class="p-3 text-center" style="font-size: 12px;">
         Please enter the verification code <br>
         that has been sent to your phone number:<br><br>
@@ -48,7 +48,7 @@
     },
     methods: {
       back() {
-        this.$router.go(-1)
+        this.$router.push({name: 'Step2', query: this.$route.query})
       },
       sendCode() {
         // need to check mobile is right?

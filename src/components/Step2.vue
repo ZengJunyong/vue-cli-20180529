@@ -31,6 +31,8 @@
 </template>
 
 <script>
+  import Vue from 'vue'
+
   export default {
     data() {
       let {name, email, phone} = this.$route.query
@@ -55,8 +57,9 @@
         document.location = 'http://overlay-close/'
       },
       keyInNumber() {
-        this.$router.push({name: 'Phone'})
-      },
+        let {keywords} = this.$route.query
+        this.$router.push({name: 'Phone', query: Vue.util.extend({keywords}, this.user)})
+      }
     }
   }
 </script>
