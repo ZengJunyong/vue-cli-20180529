@@ -10,7 +10,7 @@
       <input type="email" v-model.trim="user.name"><br>
       <input type="email" v-model.trim="user.email"><br>
       <template v-if="user.phone">
-        <input type="text" v-model.trim="user.phone"><br>
+        <input type="text" v-model.trim="user.phone" :disabled="true"><br>
       </template>
       <br>
       <span v-if="!user.phone">To enable us to reach you faster, kindly provide us with your phone number. <br></span>
@@ -37,8 +37,8 @@
         user: {
           name: 'Vivien Tan',
           email: 'Email@gopaktor.com',
-          // phone: '+65876543'
-          phone: ''
+          phone: '+65876543'
+          // phone: ''
         }
       }
     },
