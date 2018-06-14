@@ -1,12 +1,15 @@
 <template>
   <div>
     <div v-show="!code">
-      <div class="text-center top-bar"><span @click="back()" class="carousel-control-prev-icon"></span>Enter Phone Number</div>
+      <div class="text-center top-bar"><span @click="back()" class="carousel-control-prev-icon"></span>Enter Phone
+        Number
+      </div>
       <div class="p-3 text-center" style="font-size: 12px;">
         To enable us to reach you faster, <br>
         we need to verify your phone number: <br><br>
-        <input type="text" class="phone_country_code" v-model.trim="phone.countryCode">
-        <input type="text" class="phone" v-model.trim="phone.number">
+        <span style="font-size: 25px;padding-right: 8px;">+</span>
+        <input type="text" class="phone_country_code" v-model.trim="countryCode">
+        <input type="text" class="phone" v-model.trim="phone">
         <div class="pt-1" style="color: #706ec8;" :class="{invisible:!sending}">Sending...</div>
       </div>
       <div class="cta" @click="sendCode()" style="background: #706ec8;">
@@ -14,7 +17,9 @@
       </div>
     </div>
     <div v-show="code">
-      <div class="text-center top-bar"><span @click="back()" class="carousel-control-prev-icon"></span>Verify Phone Number</div>
+      <div class="text-center top-bar"><span @click="back()" class="carousel-control-prev-icon"></span>Verify Phone
+        Number
+      </div>
       <div class="p-3 text-center" style="font-size: 12px;">
         Please enter the verification code <br>
         that has been sent to your phone number:<br><br>
@@ -36,10 +41,8 @@
   export default {
     data() {
       return {
-        phone: {
-          countryCode: '+65',
-          number: ''
-        },
+        countryCode: '65',
+        phone: '',
         sending: 0,
         code: '', // the real code
         code2: '', // the code of textbox
@@ -53,7 +56,7 @@
       sendCode() {
         // need to check mobile is right?
         let pattern = /^^[689]\d{7}$$/
-        console.log(pattern.test(this.phone.number))
+        console.log(pattern.test(this.phone))
 
         this.sending = 1
         setTimeout(() => {
@@ -90,7 +93,7 @@
   }
 
   .phone_country_code {
-    width: 50px;
+    width: 40px;
   }
 
   .phone {
