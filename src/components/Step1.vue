@@ -64,10 +64,12 @@
 </template>
 
 <script>
+  // http://localhost:8080/#/?name=Vivien Tan&email=yong@gopaktor.com&phone=65876543
   export default {
     data() {
+      let {keywords} = this.$route.query
       return {
-        keywords: [],
+        keywords: keywords ? keywords : [], // keep the status if go back from step 2
         options: [
           'Personal Shopping',
           'Personal Grooming',
@@ -88,7 +90,8 @@
     },
     methods: {
       ok() {
-        this.$router.push({name: 'Step2'})
+        this.$route.query.keywords = this.keywords
+        this.$router.push({name: 'Step2', query: this.$route.query})
       },
       cancel() {
         document.location = 'http://overlay-close/'

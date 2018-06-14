@@ -33,20 +33,22 @@
 <script>
   export default {
     data() {
+      let {name, email, phone} = this.$route.query
+      if (phone)
+        phone = '+' + phone
       return {
-        user: {
-          name: 'Vivien Tan',
-          email: 'Email@gopaktor.com',
-          phone: '+65876543'
-          // phone: ''
-        }
+        user: {name, email, phone}
       }
     },
     methods: {
       back() {
-        this.$router.go(-1)
+        this.$router.push({name: 'Step1', query: this.$route.query})
       },
       grant() {
+        let {keywords} = this.$route.query
+        let {name, email, phone} = this.user
+        // send the data to server
+        console.log({name, email, phone, keywords})
         this.$refs.grant.show()
       },
       ok() {
