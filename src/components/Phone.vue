@@ -31,7 +31,7 @@
         Grant Permission
       </div>
       <b-modal ref="grant" title="We got your back!" ok-title="Alright, sure!" @ok="ok" ok-only>
-        {user.name}, how about you continue swiping while waiting for our Relationship Manager to contact you?
+        {{name}}, how about you continue swiping while waiting for our Relationship Manager to contact you?
       </b-modal>
     </div>
   </div>
@@ -40,9 +40,11 @@
 <script>
   export default {
     data() {
+      let {name} = this.$route.query
       return {
-        countryCode: '65',
-        phone: '',
+        name,
+        countryCode: '86', // TODO 65 in prod
+        phone: '15873157653', // TODO '' in prod
         sending: 0,
         code: '', // the real code
         code2: '', // the code of textbox
@@ -60,24 +62,30 @@
 
         this.sending = 1
         let phone = '+' + this.countryCode + this.phone
-        this.$http.post('http://localhost:4000/sendOTPFromPaktor', {phone: '+8615873157653'}).then((res) => {
-          console.log(res)
-        })
-        setTimeout(() => {
+        this.$http.post('http://localhost:4000/sendOTPFromPaktor', {phone}).then((res) => {
           this.sending = 0
-          this.code = '1234'
-          this.sec = 60
-          let tick = setInterval(() => {
-              if (this.sec-- == 0) {
-                clearInterval(tick)
-                this.code = ''
-              }
-            }, 1000
-          )
-        }, 2000)
+          let code = res.body
+          if (code) {
+            this.code = code
+            this.sec = 60
+            let tick = setInterval(() => {
+                if (this.sec-- == 0) {
+                  clearInterval(tick)
+                  this.code = ''
+                }
+              }, 1000
+            )
+          } else {
+            alert('Sent but failed, Wrong phone number?')
+          }
+        })
       },
       grant() {
         if (this.code == this.code2) {
+          let {name, email, keywords} = this.$route.query
+          let phone = '+' + this.countryCode + this.phone
+          // send the data to server
+          console.log({name, email, phone, keywords})
           this.$refs.grant.show()
         } else {
           alert('Sorry, wrong code.')
