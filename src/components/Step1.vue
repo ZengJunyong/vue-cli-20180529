@@ -16,9 +16,9 @@
       </b-carousel-slide>
     </b-carousel>
     <div class="p-3">
-      <template v-for="(o, index) in options" v-if="index<6">
-        <input type="checkbox" :id="'a' +index" :value="o" v-model="g.keywords">
-        <label :for="'a' + index" :class="{'badge-yes': g.keywords.indexOf(o)!=-1}" class="badge">{{o}}</label>
+      <template v-for="(o, index) in optionsImageConsultancy">
+        <input type="checkbox" :id="'optionsImageConsultancy' +index" :value="o" v-model="g.imageConsultancy">
+        <label :for="'optionsImageConsultancy' + index" :class="{'badge-yes': g.imageConsultancy.indexOf(o)!=-1}" class="badge">{{o}}</label>
       </template>
     </div>
     <div class="text-center title">Date Coaching</div>
@@ -44,9 +44,9 @@
       </b-carousel-slide>
     </b-carousel>
     <div class="p-3">
-      <template v-for="(o, index) in options" v-if="index>=6">
-        <input type="checkbox" :id="'a' +index" :value="o" v-model="g.keywords">
-        <label :for="'a' + index" :class="{'badge-yes': g.keywords.indexOf(o)!=-1}" class="badge">{{o}}</label>
+      <template v-for="(o, index) in optionsDateCoaching">
+        <input type="checkbox" :id="'optionsDateCoaching' +index" :value="o" v-model="g.dateCoaching">
+        <label :for="'optionsDateCoaching' + index" :class="{'badge-yes': g.dateCoaching.indexOf(o)!=-1}" class="badge">{{o}}</label>
       </template>
     </div>
     <div class="cta" @click="ok()" style="background: #706ec8;">
@@ -70,14 +70,15 @@
     data() {
       return {
         g: $g, // IMPORTANT: can't use $g as the key!
-        options: [
+        optionsImageConsultancy: [
           'Personal Shopping',
           'Personal Grooming',
           'Doll Up for Your Date',
           'Personal Capsule',
           'Wardrobe Audit',
           'Silhouette & Colour Talk',
-
+        ],
+        optionsDateCoaching: [
           'Body Language',
           'Art of Socialising',
           'Confidence Building',

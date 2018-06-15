@@ -21,7 +21,8 @@ window.$g = {
   email: null,
   country: null,
   phone: null,
-  keywords: []
+  imageConsultancy: [],
+  dateCoaching: []
 } // a special ver that is used for save global data
 
 /* eslint-disable no-new */

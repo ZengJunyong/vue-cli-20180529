@@ -43,9 +43,9 @@
         this.$router.push({name: 'Step1'})
       },
       grant() {
-        let {name, email, country, phone, keywords} = $g
+        let {name, email, country, phone, imageConsultancy, dateCoaching} = $g
         // send the data to server
-        console.log({name, email, country, phone, keywords})
+        console.log({name, email, country, phone, imageConsultancy, dateCoaching})
         this.$refs.grant.show()
       },
       ok() {
