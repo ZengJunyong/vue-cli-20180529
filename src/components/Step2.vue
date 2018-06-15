@@ -32,6 +32,8 @@
 </template>
 
 <script>
+  import services from '../services'
+
   export default {
     data() {
       return {
@@ -46,9 +48,7 @@
         // then go to this page again, can't see the data is changed
       },
       grant() {
-        let {name, email, country, phone, imageConsultancy, dateCoaching} = $g
-        // send the data to server
-        console.log({name, email, country, phone, imageConsultancy, dateCoaching})
+        services.sendPaktorProfile()
         this.$refs.grant.show()
       },
       ok() {

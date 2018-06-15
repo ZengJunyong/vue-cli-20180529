@@ -39,6 +39,8 @@
 </template>
 
 <script>
+  import services from '../services'
+
   export default {
     data() {
       return {
@@ -60,7 +62,7 @@
 
         this.sending = 1
         let phone = '+' + this.g.country + this.g.phone
-        this.$http.post('http://localhost:4000/sendOTPFromPaktor', {phone}).then((res) => {
+        this.$http.post('http://letsgaigai.com/sendOTPFromPaktor', {phone}).then((res) => {
           this.sending = 0
           let code = res.body
           if (code) {
@@ -80,9 +82,7 @@
       },
       grant() {
         if (this.code == this.code2) {
-          let {name, email, country, phone, imageConsultancy, dateCoaching} = $g
-          // send the data to server
-          console.log({name, email, country, phone, imageConsultancy, dateCoaching})
+          services.sendPaktorProfile()
           this.$refs.grant.show()
         } else {
           alert('Sorry, wrong code.')
