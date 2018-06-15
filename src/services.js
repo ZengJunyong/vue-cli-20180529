@@ -12,6 +12,6 @@ export default {
       imageConsultancy: imageConsultancy.join(','),
       dateCoaching: dateCoaching.join(',')
     }
-    Vue.http.post('http://letsgaigai.com/sendPaktorProfile', profile)
+    Vue.http.post('https://letsgaigai.com/sendPaktorProfile', profile)
   }
 }

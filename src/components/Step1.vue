@@ -18,7 +18,8 @@
     <div class="p-3">
       <template v-for="(o, index) in optionsImageConsultancy">
         <input type="checkbox" :id="'optionsImageConsultancy' +index" :value="o" v-model="g.imageConsultancy">
-        <label :for="'optionsImageConsultancy' + index" :class="{'badge-yes': g.imageConsultancy.indexOf(o)!=-1}" class="badge">{{o}}</label>
+        <label :for="'optionsImageConsultancy' + index" :class="{'badge-yes': g.imageConsultancy.indexOf(o)!=-1}"
+               class="badge">{{o}}</label>
       </template>
     </div>
     <div class="text-center title">Date Coaching</div>
@@ -64,8 +65,10 @@
 </template>
 
 <script>
-  // http://localhost:8081/#/?name=Vivien Tan&email=yong@gopaktor.com&country=86&phone=15873157653
-  // http://localhost:8081/#/?name=Vivien Tan&email=yong@gopaktor.com
+  // http://localhost:8080/#/?name=Yong&email=yong@gopaktor.com&country=86&phone=15873157653
+  // https://s3-ap-southeast-1.amazonaws.com/paktor-static/61/index.html#/?name=Yong&email=yong%40gopaktor.com&country=86&phone=15873157653
+  // http://localhost:8080/#/?name=Yong&email=yong@gopaktor.com
+  // https://s3-ap-southeast-1.amazonaws.com/paktor-static/61/index.html#/?name=Yong&email=yong%40gopaktor.com
   export default {
     data() {
       return {
@@ -99,6 +102,8 @@
       }
       if (country) {
         $g.country = country
+      } else {
+        $g.country = '65' // SG
       }
       if (phone) {
         $g.phone = phone
