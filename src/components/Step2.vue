@@ -41,6 +41,9 @@
     methods: {
       back() {
         this.$router.push({name: 'Step1'})
+        // this is different with this.$router.go(-1),
+        // or else change the data in this page, back to step 1,
+        // then go to this page again, can't see the data is changed
       },
       grant() {
         let {name, email, country, phone, imageConsultancy, dateCoaching} = $g
