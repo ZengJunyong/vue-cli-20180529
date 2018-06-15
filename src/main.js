@@ -16,12 +16,18 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(VueResource)
 
-window.$g = {} // a special ver that is used for save global data
+window.$g = {
+  name: null,
+  email: null,
+  country: null,
+  phone: null,
+  keywords: []
+} // a special ver that is used for save global data
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {App},
   template: '<App/>'
 })

@@ -17,8 +17,8 @@
     </b-carousel>
     <div class="p-3">
       <template v-for="(o, index) in options" v-if="index<6">
-        <input type="checkbox" :id="'a' +index" :value="o" v-model="keywords">
-        <label :for="'a' + index" :class="{'badge-yes': keywords.indexOf(o)!=-1}" class="badge">{{o}}</label>
+        <input type="checkbox" :id="'a' +index" :value="o" v-model="g.keywords">
+        <label :for="'a' + index" :class="{'badge-yes': g.keywords.indexOf(o)!=-1}" class="badge">{{o}}</label>
       </template>
     </div>
     <div class="text-center title">Date Coaching</div>
@@ -45,8 +45,8 @@
     </b-carousel>
     <div class="p-3">
       <template v-for="(o, index) in options" v-if="index>=6">
-        <input type="checkbox" :id="'a' +index" :value="o" v-model="keywords">
-        <label :for="'a' + index" :class="{'badge-yes': keywords.indexOf(o)!=-1}" class="badge">{{o}}</label>
+        <input type="checkbox" :id="'a' +index" :value="o" v-model="g.keywords">
+        <label :for="'a' + index" :class="{'badge-yes': g.keywords.indexOf(o)!=-1}" class="badge">{{o}}</label>
       </template>
     </div>
     <div class="cta" @click="ok()" style="background: #706ec8;">
@@ -64,14 +64,12 @@
 </template>
 
 <script>
-  import Vue from 'vue'
-
-  // http://localhost:8080/#/?name=Vivien Tan&email=yong@gopaktor.com&phone=65876543
+  // http://localhost:8081/#/?name=Vivien Tan&email=yong@gopaktor.com&country=86&phone=15873157653
+  // http://localhost:8081/#/?name=Vivien Tan&email=yong@gopaktor.com
   export default {
     data() {
-      let {keywords} = this.$route.query
       return {
-        keywords: keywords ? keywords : [], // keep the status if go back from step 2
+        g: $g, // IMPORTANT: can't use $g as the key!
         options: [
           'Personal Shopping',
           'Personal Grooming',
@@ -90,11 +88,23 @@
         ]
       }
     },
+    mounted() {
+      let {name, email, phone, country} = this.$route.query
+      if (name) {
+        $g.name = name
+      }
+      if (email) {
+        $g.email = email
+      }
+      if (country) {
+        $g.country = country
+      }
+      if (phone) {
+        $g.phone = phone
+      }
+    },
     methods: {
       ok() {
-        let {name, email, phone} = this.$route.query
-        let {keywords} = this
-        Vue.util.extend($g, {name, email, phone, keywords})
         this.$router.push({name: 'Step2'})
       },
       cancel() {
