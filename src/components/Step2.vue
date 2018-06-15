@@ -35,7 +35,7 @@
 
   export default {
     data() {
-      let {name, email, phone} = this.$route.query
+      let {name, email, phone} = $g
       if (phone)
         phone = '+' + phone
       return {

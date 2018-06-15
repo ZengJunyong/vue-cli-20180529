@@ -64,6 +64,8 @@
 </template>
 
 <script>
+  import Vue from 'vue'
+
   // http://localhost:8080/#/?name=Vivien Tan&email=yong@gopaktor.com&phone=65876543
   export default {
     data() {
@@ -90,8 +92,10 @@
     },
     methods: {
       ok() {
-        this.$route.query.keywords = this.keywords
-        this.$router.push({name: 'Step2', query: this.$route.query})
+        let {name, email, phone} = this.$route.query
+        let {keywords} = this
+        Vue.util.extend($g, {name, email, phone, keywords})
+        this.$router.push({name: 'Step2'})
       },
       cancel() {
         document.location = 'http://overlay-close/'

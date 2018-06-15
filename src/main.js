@@ -16,6 +16,8 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(VueResource)
 
+window.$g = {} // a special ver that is used for save global data
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
