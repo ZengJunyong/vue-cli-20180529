@@ -21,7 +21,7 @@
       I'm Not Interested
     </div>
 
-    <b-modal ref="hold" title="Hold that thought!" ok-title="I'm Interested" cancel-title="Not Interested"
+    <b-modal ref="hold" title="Hold that thought!" ok-title="I'm Interested" cancel-title="Not Interested" @cancel="cancel()"
              @ok="register()">
       You might miss out on a chance to meet that special someone sooner! Also, you won’t be able to see this message
       again.
@@ -30,6 +30,8 @@
 </template>
 
 <script>
+  import services from '../services'
+
   export default {
     data() {
       return {}
@@ -37,6 +39,11 @@
     methods: {
       register() {
         this.$router.push({name: 'Step2'})
+      },
+      cancel() {
+        services.unsubscribePaktorProfile().then((res) => {
+          document.location = 'http://overlay-close/'
+        })
       },
       ignore() {
         this.$refs.hold.show()

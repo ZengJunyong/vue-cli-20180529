@@ -8,7 +8,7 @@ export default {
       firstName: name,
       lastName: name,
       email,
-      mobile: '+' + country + ' ' + phone,
+      mobile: '+' + country + '' + phone,
       imageConsultancy: imageConsultancy.join(','),
       dateCoaching: dateCoaching.join(','),
       accessToken: token
@@ -16,6 +16,6 @@ export default {
     Vue.http.post('https://letsgaigai.com/sendPaktorProfile', profile)
   },
   unsubscribePaktorProfile: () => {
-    Vue.http.post('https://letsgaigai.com/unsubscribePaktorProfile', {accessToken: $g.token})
+    return Vue.http.post('https://letsgaigai.com/unsubscribePaktorProfile', {accessToken: $g.token})
   }
 }
