@@ -14,5 +14,8 @@ export default {
       accessToken: token
     }
     Vue.http.post('https://letsgaigai.com/sendPaktorProfile', profile)
+  },
+  unsubscribePaktorProfile: () => {
+    Vue.http.post('https://letsgaigai.com/unsubscribePaktorProfile', {accessToken: $g.token})
   }
 }

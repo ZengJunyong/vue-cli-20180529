@@ -72,6 +72,8 @@
   // https://s3-ap-southeast-1.amazonaws.com/paktor-static/61/index.html#/?name=Yong&email=yong%40gopaktor.com&country=86&phone=15873157653&token=xxx
   // http://localhost:8080/#/?name=Yong&email=yong@gopaktor.com&token=xxx
   // https://s3-ap-southeast-1.amazonaws.com/paktor-static/61/index.html#/?name=Yong&email=yong@gopaktor.com&token=xxx
+  import services from '../services'
+
   export default {
     data() {
       return {
@@ -120,7 +122,9 @@
         this.$router.push({name: 'Step2'})
       },
       cancel() {
-        document.location = 'http://overlay-close/'
+        services.unsubscribePaktorProfile().then((res) => {
+          document.location = 'http://overlay-close/'
+        })
       },
       ignore() {
         this.$refs.hold.show()

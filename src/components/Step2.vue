@@ -9,10 +9,10 @@
       <img src="static/Group.png" style="width: 70%;display: block;margin: 25px auto;">
       We need permission to obtain your personal details to contact you:
       <br><br>
-      <span style="display: inline-block;width: 45px;">Name: </span><input type="email" v-model.trim="g.name" :disabled="true"><br>
-      <span style="display: inline-block;width: 45px;">Email: </span><input type="email" v-model.trim="g.email"><br>
+      <span style="display: inline-block;width: 50px;">Name: </span><input type="email" v-model.trim="g.name" :disabled="true"><br>
+      <span style="display: inline-block;width: 50px;">Email: </span><input type="email" v-model.trim="g.email"><br>
       <template v-if="g.phone">
-        <span style="display: inline-block;width: 45px;">Phone: </span><input type="text" v-model="'+' + g.country + ' ' + g.phone" :disabled="true"><br>
+        <span style="display: inline-block;width: 50px;">Phone: </span><input type="text" v-model="'+' + g.country + ' ' + g.phone" :disabled="true"><br>
       </template>
       <br>
       <span v-if="!g.phone">To enable us to reach you faster, kindly provide us with your phone number. <br></span>
@@ -66,7 +66,7 @@
 <style scoped>
   input {
     margin-bottom: 5px;
-    padding: 0px 12px;
+    padding: 0px 5px;
     width: 180px;
   }
 </style>
