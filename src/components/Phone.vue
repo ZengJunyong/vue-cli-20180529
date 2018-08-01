@@ -1,8 +1,9 @@
 <template>
   <div>
     <div v-show="!code">
-      <div class="text-center top-bar"><span @click="back()" class="carousel-control-prev-icon"></span>Enter Phone
-        Number
+      <div class="text-center top-bar">
+        <img src="static/back.png" @click="back()" alt="">
+        Enter Phone Number
       </div>
       <div class="p-3 text-center" style="font-size: 12px;">
         To enable us to reach you faster, <br>

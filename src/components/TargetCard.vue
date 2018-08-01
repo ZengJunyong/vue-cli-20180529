@@ -14,7 +14,7 @@
       <img style="width: 100%;" src="static/TC_2.jpg" alt="">
       <div style="position: absolute;height: 100%;top: 0;width: 100%;padding: 15px;color:#706EC8;">
         <div style="border: 1px solid #706EC8;height: 100%;position: relative;">
-          <div class="p-3" style="position: absolute;bottom: 0px;">
+          <div class="p-4" style="position: absolute;bottom: 0px;">
             [Name], go 1-on-1 dating!
             <br>
             <div class="fs12">Get an exclusive match today! </div>

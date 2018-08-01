@@ -1,8 +1,11 @@
 <template>
   <div>
-    <div class="text-center top-bar"><span @click="back()" class="carousel-control-prev-icon"></span>GaiGai</div>
+    <div class="text-center top-bar">
+      <img src="static/back.png" @click="back()" alt="">
+      GaiGai
+    </div>
     <img src="static/Fleek_Image_2.jpg" style="width: 100%;">
-    <div class="p-3" style="font-size: 12px;">
+    <div class="p-4" style="font-size: 12px;">
       <p>
         As one of the largest offline dating agencies in Singapore, GaiGai offers an extensive database of quality
         clientele, experienced dating practitioners, engaging events and modern matching technology.

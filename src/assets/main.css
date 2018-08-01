@@ -22,15 +22,15 @@ body {
 
 .top-bar {
   padding: 14px;
-  font-size: 22px;
+  font-size: 26px;
   position: relative;
 }
 
-.top-bar span {
+.top-bar img {
   position: absolute;
-  left: 14px;
-  top: 20px;
-  opacity: 0.5;
+  top: 0;
+  left: 3px;
+  padding: 20px 30px 17px 17px;
 }
 
 .title {
@@ -62,6 +62,8 @@ input[type="checkbox"] {
   text-align: center;
   padding: 18px;
   font-size: 18px;
+  border-radius: 40px;
+  margin: 0px 1.5rem 8px 1.5rem;
 }
 
 footer button.btn-primary{
