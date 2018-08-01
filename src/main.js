@@ -22,7 +22,8 @@ window.$g = {
   country: null,
   phone: null,
   imageConsultancy: [],
-  dateCoaching: []
+  dateCoaching: [],
+  token: null
 } // a special ver that is used for save global data
 
 /* eslint-disable no-new */

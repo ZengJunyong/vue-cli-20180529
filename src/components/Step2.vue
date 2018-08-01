@@ -9,7 +9,7 @@
       <img src="static/Group.png" style="width: 70%;display: block;margin: 25px auto;">
       We need permission to obtain your personal details to contact you:
       <br><br>
-      <span style="display: inline-block;width: 55px;">Name: </span><input type="email" v-model.trim="g.name"><br>
+      <span style="display: inline-block;width: 55px;">Name: </span><input type="email" v-model.trim="g.name" :disabled="true"><br>
       <span style="display: inline-block;width: 55px;">Email: </span><input type="email" v-model.trim="g.email"><br>
       <template v-if="g.phone">
         <span style="display: inline-block;width: 55px;">Phone: </span><input type="text" v-model="'+' + g.country + ' ' + g.phone" :disabled="true"><br>

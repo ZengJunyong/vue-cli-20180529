@@ -68,10 +68,10 @@
 </template>
 
 <script>
-  // http://localhost:8080/#/?name=Yong&email=yong@gopaktor.com&country=86&phone=15873157653
-  // https://s3-ap-southeast-1.amazonaws.com/paktor-static/61/index.html#/?name=Yong&email=yong%40gopaktor.com&country=86&phone=15873157653
-  // http://localhost:8080/#/?name=Yong&email=yong@gopaktor.com
-  // https://s3-ap-southeast-1.amazonaws.com/paktor-static/61/index.html#/?name=Yong&email=yong@gopaktor.com
+  // http://localhost:8080/#/?name=Yong&email=yong@gopaktor.com&country=86&phone=15873157653&token=xxx
+  // https://s3-ap-southeast-1.amazonaws.com/paktor-static/61/index.html#/?name=Yong&email=yong%40gopaktor.com&country=86&phone=15873157653&token=xxx
+  // http://localhost:8080/#/?name=Yong&email=yong@gopaktor.com&token=xxx
+  // https://s3-ap-southeast-1.amazonaws.com/paktor-static/61/index.html#/?name=Yong&email=yong@gopaktor.com&token=xxx
   export default {
     data() {
       return {
@@ -96,7 +96,7 @@
       }
     },
     mounted() {
-      let {name, email, phone, country} = this.$route.query
+      let {name, email, phone, country, token} = this.$route.query
       if (name) {
         $g.name = name
       }
@@ -110,6 +110,9 @@
       }
       if (phone) {
         $g.phone = phone
+      }
+      if (token) {
+        $g.token = token
       }
     },
     methods: {
