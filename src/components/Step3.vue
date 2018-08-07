@@ -36,6 +36,26 @@
     data() {
       return {}
     },
+    mounted() {
+      let {name, email, phone, country, token} = this.$route.query
+      if (name) {
+        $g.name = name
+      }
+      if (email) {
+        $g.email = email
+      }
+      if (country) {
+        $g.country = country
+      } else {
+        $g.country = '65' // SG
+      }
+      if (phone) {
+        $g.phone = phone
+      }
+      if (token) {
+        $g.token = token
+      }
+    },
     methods: {
       register() {
         this.$router.push({name: 'Step2'})
