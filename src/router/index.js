@@ -5,6 +5,8 @@ import Step2 from '@/components/Step2'
 import Step3 from '@/components/Step3'
 import Phone from '@/components/Phone'
 import TargetCard from '@/components/TargetCard'
+import Terms from '@/components/Terms'
+import Policy from '@/components/Policy'
 
 Vue.use(Router)
 
@@ -34,6 +36,16 @@ export default new Router({
       path: '/TargetCard',
       name: 'TargetCard',
       component: TargetCard
+    },
+    {
+      path: '/Terms',
+      name: 'Terms',
+      component: Terms
+    },
+    {
+      path: '/Policy',
+      name: 'Policy',
+      component: Policy
     }
   ]
 })

@@ -17,8 +17,8 @@
       <br>
       <span v-if="!g.phone">To enable us to reach you faster, kindly provide us with your phone number. <br></span>
       By granting permission, you agree to our
-      <a target="_blank" href="http://www.gopaktor.com/#/term">Terms of Use</a> and
-      <a target="_blank" href="http://www.gopaktor.com/#/privacy">Privacy Policy</a>.
+      <router-link to="Terms">Terms of Use</router-link> and
+      <router-link to="Policy">Privacy Policy</router-link>
     </div>
     <div class="cta" @click="grant()" v-if="g.phone" style="background: #706ec8;">
       Grant Permission
