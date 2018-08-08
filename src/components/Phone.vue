@@ -1,5 +1,17 @@
 <template>
   <div>
+    <b-modal ref="grant" title="We got your back!" ok-title="Alright, sure!" @ok="ok"
+             ok-only hide-header-close no-close-on-esc no-close-on-backdrop>
+      {{g.name}}, how about you continue swiping while waiting for our Relationship Manager to contact you?
+    </b-modal>
+    <b-modal ref="alert1" title="Sent but failed" ok-title="OK"
+             ok-only hide-header-close no-close-on-esc no-close-on-backdrop>
+      Wrong phone number?
+    </b-modal>
+    <b-modal ref="alert2" title="Sorry" ok-title="OK"
+             ok-only hide-header-close no-close-on-esc no-close-on-backdrop>
+      Wrong code.
+    </b-modal>
     <div v-show="!code">
       <div class="text-center top-bar">
         <img src="static/back.png" @click="back()" alt="">
@@ -242,7 +254,7 @@
       </div>
     </div>
     <div v-show="code">
-      <div class="text-center top-bar"><span @click="back()" class="carousel-control-prev-icon"></span>Verify Phone
+      <div class="text-center top-bar"><img src="static/back.png" @click="back()" alt="">Verify Phone
         Number
       </div>
       <div class="p-3 text-center" style="font-size: 12px;">
@@ -255,10 +267,6 @@
       <div class="cta" @click="grant()" style="background: #706ec8;">
         Grant Permission
       </div>
-      <b-modal ref="grant" title="We got your back!" ok-title="Alright, sure!" @ok="ok"
-               ok-only hide-header-close no-close-on-esc no-close-on-backdrop>
-        {{g.name}}, how about you continue swiping while waiting for our Relationship Manager to contact you?
-      </b-modal>
     </div>
   </div>
 </template>
@@ -301,7 +309,7 @@
               }, 1000
             )
           } else {
-            alert('Sent but failed, Wrong phone number?')
+            this.$refs.alert1.show()
           }
         })
       },
@@ -310,7 +318,7 @@
           services.sendPaktorProfile()
           this.$refs.grant.show()
         } else {
-          alert('Sorry, wrong code.')
+          this.$refs.alert2.show()
         }
       },
       ok() {

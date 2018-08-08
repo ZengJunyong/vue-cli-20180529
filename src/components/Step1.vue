@@ -70,7 +70,7 @@
 <script>
   // http://localhost:8080/#/?name=Yong&email=yong@gopaktor.com&country=86&phone=15873157653&token=EAAIbG96t1IYBAOw5Sf4r8ZAtTCSgoXUMmhucM2bH4vx1dXpnyDGEsxdMwcSsNCQqHhCiZATPw7MmRu5BoDYsKsdSYMEgG4lpMFqihxL6JBW697Hf2SS2tFPVCKssP6IiDwmYrKjKfvJGnHIihz2E9VehjDqETW2yftH9ssT9MGZA5i6oYRBT3p6jZCvKS9CggUfsZBBIhC5gUcqZCdD5nGZCrrGnDEQhoxHQ7FiyZCThVwZDZD
   // https://s3-ap-southeast-1.amazonaws.com/paktor-static/61/index.html#/?name=Yong&email=yong%40gopaktor.com&country=86&phone=15873157653&token=EAAIbG96t1IYBAOw5Sf4r8ZAtTCSgoXUMmhucM2bH4vx1dXpnyDGEsxdMwcSsNCQqHhCiZATPw7MmRu5BoDYsKsdSYMEgG4lpMFqihxL6JBW697Hf2SS2tFPVCKssP6IiDwmYrKjKfvJGnHIihz2E9VehjDqETW2yftH9ssT9MGZA5i6oYRBT3p6jZCvKS9CggUfsZBBIhC5gUcqZCdD5nGZCrrGnDEQhoxHQ7FiyZCThVwZDZD
-  // http://localhost:8080/#/?name=Yong&email=yong@gopaktor.com&token=xxx
+  // http://192.168.1.102:8080/#/?name=Yong&email=yong@gopaktor.com&token=EAAIbG96t1IYBAOw5Sf4r8ZAtTCSgoXUMmhucM2bH4vx1dXpnyDGEsxdMwcSsNCQqHhCiZATPw7MmRu5BoDYsKsdSYMEgG4lpMFqihxL6JBW697Hf2SS2tFPVCKssP6IiDwmYrKjKfvJGnHIihz2E9VehjDqETW2yftH9ssT9MGZA5i6oYRBT3p6jZCvKS9CggUfsZBBIhC5gUcqZCdD5nGZCrrGnDEQhoxHQ7FiyZCThVwZDZD
   // https://s3-ap-southeast-1.amazonaws.com/paktor-static/61/index.html#/?name=Yong&email=yong@gopaktor.com&token=xxx
   import services from '../services'
 
