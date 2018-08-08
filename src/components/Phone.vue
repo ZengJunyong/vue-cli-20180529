@@ -234,7 +234,7 @@
             <option value="358">Åland Islands</option>
           </select>
         </div>
-        <input type="text" class="phone" v-model.trim="g.phone">
+        <input type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" class="phone" v-model="g.phone">
         <div class="pt-1" style="color: #706ec8;" :class="{invisible:!sending}">Sending...</div>
       </div>
       <div class="cta" @click="sendCode()" style="background: #706ec8;">
