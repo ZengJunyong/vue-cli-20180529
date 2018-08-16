@@ -59,7 +59,7 @@
     <div class="cta" @click="ignore()" style="background: #a1a2b3;">
       I'm Not Interested
     </div>
-    <b-modal ref="hold" title="Hold that thought!" ok-title="I'm Interested" cancel-title="Not Interested"
+    <b-modal ref="hold" :title="'Hold that thought! ' + g.name" ok-title="I'm Interested" cancel-title="Not Interested"
              @ok="ok()" @cancel="cancel()">
       You might miss out on a chance to meet that special someone sooner! Also, you won’t be able to see this message
       again.
@@ -69,9 +69,10 @@
 
 <script>
   // http://localhost:8080/#/?name=Yong&email=yong@gopaktor.com&country=86&phone=15873157653&token=EAAIbG96t1IYBAOw5Sf4r8ZAtTCSgoXUMmhucM2bH4vx1dXpnyDGEsxdMwcSsNCQqHhCiZATPw7MmRu5BoDYsKsdSYMEgG4lpMFqihxL6JBW697Hf2SS2tFPVCKssP6IiDwmYrKjKfvJGnHIihz2E9VehjDqETW2yftH9ssT9MGZA5i6oYRBT3p6jZCvKS9CggUfsZBBIhC5gUcqZCdD5nGZCrrGnDEQhoxHQ7FiyZCThVwZDZD
-  // https://s3-ap-southeast-1.amazonaws.com/paktor-static/61/index.html#/?name=Yong&email=yong%40gopaktor.com&country=86&phone=15873157653&token=EAAIbG96t1IYBAOw5Sf4r8ZAtTCSgoXUMmhucM2bH4vx1dXpnyDGEsxdMwcSsNCQqHhCiZATPw7MmRu5BoDYsKsdSYMEgG4lpMFqihxL6JBW697Hf2SS2tFPVCKssP6IiDwmYrKjKfvJGnHIihz2E9VehjDqETW2yftH9ssT9MGZA5i6oYRBT3p6jZCvKS9CggUfsZBBIhC5gUcqZCdD5nGZCrrGnDEQhoxHQ7FiyZCThVwZDZD
+  // https://static.gopaktor.com/cards/card_offline_signup_201808/index.html#/?name=Yong&email=yong%40gopaktor.com&country=86&phone=15873157653&token=EAAIbG96t1IYBAOw5Sf4r8ZAtTCSgoXUMmhucM2bH4vx1dXpnyDGEsxdMwcSsNCQqHhCiZATPw7MmRu5BoDYsKsdSYMEgG4lpMFqihxL6JBW697Hf2SS2tFPVCKssP6IiDwmYrKjKfvJGnHIihz2E9VehjDqETW2yftH9ssT9MGZA5i6oYRBT3p6jZCvKS9CggUfsZBBIhC5gUcqZCdD5nGZCrrGnDEQhoxHQ7FiyZCThVwZDZD
   // http://192.168.1.102:8080/#/?name=Yong&email=yong@gopaktor.com&token=EAAIbG96t1IYBAOw5Sf4r8ZAtTCSgoXUMmhucM2bH4vx1dXpnyDGEsxdMwcSsNCQqHhCiZATPw7MmRu5BoDYsKsdSYMEgG4lpMFqihxL6JBW697Hf2SS2tFPVCKssP6IiDwmYrKjKfvJGnHIihz2E9VehjDqETW2yftH9ssT9MGZA5i6oYRBT3p6jZCvKS9CggUfsZBBIhC5gUcqZCdD5nGZCrrGnDEQhoxHQ7FiyZCThVwZDZD
-  // https://s3-ap-southeast-1.amazonaws.com/paktor-static/61/index.html#/?name=Yong&email=yong@gopaktor.com&token=xxx
+  // https://static.gopaktor.com/cards/card_offline_signup_201808/index.html#/?name=Yong&email=yong@gopaktor.com&token=xxx
+  // https://static.gopaktor.com/cards/card_offline_signup_201808/index.html#/?name=Yong&email=yong@gopaktor.com&token=EAAIbG96t1IYBAOw5Sf4r8ZAtTCSgoXUMmhucM2bH4vx1dXpnyDGEsxdMwcSsNCQqHhCiZATPw7MmRu5BoDYsKsdSYMEgG4lpMFqihxL6JBW697Hf2SS2tFPVCKssP6IiDwmYrKjKfvJGnHIihz2E9VehjDqETW2yftH9ssT9MGZA5i6oYRBT3p6jZCvKS9CggUfsZBBIhC5gUcqZCdD5nGZCrrGnDEQhoxHQ7FiyZCThVwZDZD
   import services from '../services'
 
   export default {

@@ -4,13 +4,13 @@
              ok-only hide-header-close no-close-on-esc no-close-on-backdrop>
       {{g.name}}, how about you continue swiping while waiting for our Relationship Manager to contact you?
     </b-modal>
-    <b-modal ref="alert1" title="Sent but failed" ok-title="OK"
+    <b-modal ref="alert1" title="Invalid Entry" ok-title="OK"
              ok-only hide-header-close no-close-on-esc no-close-on-backdrop>
-      Wrong phone number?
+      Enter your phone number correctly.
     </b-modal>
-    <b-modal ref="alert2" title="Sorry" ok-title="OK"
+    <b-modal ref="alert2" title="Invalid Code" ok-title="OK"
              ok-only hide-header-close no-close-on-esc no-close-on-backdrop>
-      Wrong code.
+      Enter the right code.
     </b-modal>
     <div v-show="!code">
       <div class="text-center top-bar">
